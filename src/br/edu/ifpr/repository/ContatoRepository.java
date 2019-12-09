@@ -9,8 +9,11 @@ public class ContatoRepository {
     Contato contato;
     List<Contato> contatos;
 
-    public void adicionarContato(){
+    ContatoRepository(){
 
+    }
+
+    public void adicionarContato(){
 
 
     }

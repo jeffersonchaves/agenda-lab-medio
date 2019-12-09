@@ -25,11 +25,7 @@ public class ContatoServlet extends HttpServlet {
 
         }else if (acao.equals("excluir")){
 
-            try {
-                excluir(id);
-            } catch (ClassNotFoundException | SQLException e) {
-                e.printStackTrace();
-            }
+            excluir(id);
 
             RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
             dispatcher.forward(request, response);
@@ -41,18 +37,27 @@ public class ContatoServlet extends HttpServlet {
         }
     }
 
-    private void excluir(Integer param_id) throws ClassNotFoundException, SQLException {
+    private void excluir(Integer param_id) {
 
-        Class.forName("com.mysql.jdbc.Driver");
-        DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/agenda", "root", "root");
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
 
-        String sql = "DELETE FROM contatos where id = " + param_id;
+            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/agenda", "root", "root");
 
-        PreparedStatement statement = connection.prepareStatement(sql);
+            String sql = "DELETE FROM contatos where id = " + param_id;
 
-        statement.execute();
-        connection.close();
+            PreparedStatement statement = connection.prepareStatement(sql);
+
+            statement.execute();
+            connection.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+
     }
 
 }

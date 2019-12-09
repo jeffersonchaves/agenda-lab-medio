@@ -44,7 +44,9 @@
 
       <h1>Contatos</h1>
 
-      <table class="table">
+      <a name="" id="" class="btn btn-primary" href="cadastro.jsp" role="button">cadastrar</a>
+
+      <table class="table mt-4">
           <thead>
           <td>id</td>
           <td>nome</td>
@@ -55,6 +57,7 @@
           </thead>
           <% for (Contato contato: lista) { %>
           <tr>
+
               <td><%= contato.getId() %></td>
               <td><%= contato.getNome() %></td>
               <td><%= contato.getEmail() %></td>
