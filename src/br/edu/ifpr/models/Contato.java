@@ -4,12 +4,21 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Contato {
+    private Integer id;
     private String nome;
     private String email;
     private String endereco;
     private Date dataNascimento;
 
     public Contato(){}
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;

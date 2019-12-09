@@ -4,6 +4,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.ArrayList" %>
+
 <%
   List<Contato> lista = new ArrayList<Contato>();
 
@@ -17,9 +18,10 @@
 
   ResultSet resultSet = statement.executeQuery();
 
-  while(resultSet.next()){
+  while(resultSet.next()) {
 
       Contato contato = new Contato();
+      contato.setId(resultSet.getInt("id"));
       contato.setNome(resultSet.getString("nome"));
       contato.setEmail(resultSet.getString("email"));
       contato.setEndereco(resultSet.getString("endereco"));
@@ -27,7 +29,6 @@
 
       lista.add(contato);
   }
-
 
 %>
 
@@ -54,14 +55,14 @@
           </thead>
           <% for (Contato contato: lista) { %>
           <tr>
-              <td>ID</td>
+              <td><%= contato.getId() %></td>
               <td><%= contato.getNome() %></td>
               <td><%= contato.getEmail() %></td>
               <td><%= contato.getEndereco() %></td>
               <td><%= contato.getDataNascimento() %></td>
               <td>
-                  <a href="contato?acao=editar">editar</a> |
-                  <a href="contato?acao=excluir">excluir</a>
+                  <a href="contato?acao=editar&id=<%= contato.getId() %>">editar</a> |
+                  <a href="contato?acao=excluir&id=<%= contato.getId() %>">excluir</a>
               </td>
           </tr>
           <%}%>
