@@ -53,9 +53,6 @@ public class ContatoServlet extends HttpServlet {
 
         statement.execute();
         connection.close();
-
     }
-
-
 
 }
