@@ -6,8 +6,20 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
 
-    public static void getConnection() {
+    public static Connection getConnection() {
 
+        Connection connection = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/agenda", "root", "root");
+
+        } catch (ClassNotFoundException | SQLException e){
+            e.getMessage();
+        }
+
+        return connection;
     }
 
 }

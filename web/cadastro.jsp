@@ -14,29 +14,29 @@
 
       <h1>Cadastrar contato</h1>
 
-      <form action="">
+      <form action="contato?acao=cadastrar" method="post">
 
           <div class="form-group">
-              <label for=""></label>
-              <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+              <label for="">Nome</label>
+              <input type="text" name="nome" id="" class="form-control" placeholder="" aria-describedby="helpId">
               <small id="helpId" class="text-muted">Help text</small>
           </div>
 
           <div class="form-group">
-              <label for=""></label>
-              <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+              <label for="">E-mail</label>
+              <input type="text" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
               <small id="helpId" class="text-muted">Help text</small>
           </div>
 
           <div class="form-group">
-              <label for=""></label>
-              <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+              <label for="">Endereço</label>
+              <input type="text" name="endereco" id="" class="form-control" placeholder="" aria-describedby="helpId">
               <small id="helpId" class="text-muted">Help text</small>
           </div>
 
           <div class="form-group">
-              <label for=""></label>
-              <input type="date" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+              <label for="">Data Nascimento</label>
+              <input type="date" name="dataNascimento" id="" class="form-control" placeholder="" aria-describedby="helpId">
               <small id="helpId" class="text-muted">Help text</small>
           </div>
 
