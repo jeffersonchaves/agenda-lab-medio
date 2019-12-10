@@ -20,21 +20,8 @@ public class ContatoRepository {
 
     public void adicionarContato(Contato contato){
 
-        try{
-
-            String sql = "INSERT INTO contatos (nome, email, endereco) values (" +
-                    "'" +contato.getNome()+ "', '"
-                    +contato.getEmail()+ "', '"
-                    + contato.getEndereco()+ "')";
-
-            System.out.println(sql);
-
-            PreparedStatement prepare = connection.prepareStatement(sql);
-            prepare.execute();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        //TODO
+        //implemente o algoritmo
 
     }
 
