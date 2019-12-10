@@ -35,22 +35,6 @@ public class ContatoServlet extends HttpServlet {
 
         }else if(acao.equals("cadastrar") ){
 
-            String nome = request.getParameter("nome");
-            String email = request.getParameter("email");
-            String endereco = request.getParameter("endereco");
-            Date dataNascimento = new Date();
-
-            Contato contato = new Contato();
-            contato.setNome(nome);
-            contato.setEmail(email);
-            contato.setEndereco(endereco);
-            contato.setDataNascimento(dataNascimento);
-
-            contatoRepository.adicionarContato(contato);
-
-            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-            dispatcher.forward(request, response);
-
         }else {
             /*pagina nao encontrada;*/
         }
